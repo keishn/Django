@@ -1,0 +1,27 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Додати заклад
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-warning">Додати заклад</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="title"><b>Назва закладу</b></label>
+    {{ form.title }}
+    <label for="address"><b>Адреса</b></label>
+    {{ form.address }}
+    <label for="text"><b>Опис</b></label>
+    {{ form.text }}
+    <label for="price"><b>Середній чек</b></label>
+    {{ form.price }}</br>
+    <label for="published"><b>Дата відкриття</b></label>
+    {{ form.published }}
+    </br>
+    <button type="submit" class="btn btn-success">Додати</button>
+
+</form>
+
+{% endblock %}

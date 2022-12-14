@@ -1,0 +1,27 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Cafes
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-warning">Перелік закладів проекту "Ресторани та кафе міста"</h1>
+
+
+{% if cafes %}
+{% for el in cafes %}
+<div class="alert alert-warning mt-2000">
+    <h3><u>{{el.title}}</u></h3>
+    <p><b><i>{{el.address}}</i></b></p>
+    <p>{{el.text}}</p>
+    <p><i>Середній чек: ₴ {{el.price}}</i></p>
+    <p><b>Дата відкриття: {{el.published}}</b></p>
+    <p><b>Зареєстровано: {{el.created}}</b></p>
+</div>
+
+{% endfor %}
+{% else %}
+    <p>В даному каталозі записи відсутні.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Cafe
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-warning">Обраний заклад</h1>
+
+
+{% if cafe %}
+<div class="alert alert-warning mt-2000">
+    <h3><u>{{cafe.title}}</u></h3>
+    <p><b><i>{{cafe.address}}</i></b></p>
+    <p>{{cafe.text}}</p>
+    <p><i>Середній чек: ₴ {{cafe.price}}</i></p>
+    <p><b>Рік відкриття: {{cafe.published}}</b></p>
+    <p><b>Дата реєстрації: {{cafe.created}}</b></p>
+</div>
+
+{% else %}
+    <p>В даному каталозі запис відсутні.</p>
+{% endif %}
+{% endblock %}
